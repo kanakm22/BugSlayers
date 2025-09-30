@@ -24,8 +24,12 @@ async function main() {
 
 
 
-app.get('/', (req, res) => {
-  res.render('index.ejs');
+// app.get('/', (req, res) => {
+//   res.render('index.ejs');
+// });
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.ejs"));
 });
 
 app.get('/login', (req, res) => {
