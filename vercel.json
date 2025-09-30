@@ -3,10 +3,10 @@
   "functions": {
     "api/index.js": {
       "runtime": "@vercel/node@4.0.0",
-      "includeFiles": "views/**"
-    },
-    "api/index.js:public": {
-      "includeFiles": "public/**"
+      "includeFiles": [
+        "views/**",
+        "public/**"
+      ]
     }
   },
   "routes": [
