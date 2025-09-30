@@ -1,19 +1,14 @@
 {
-  "version": 2,
   "functions": {
     "api/index.js": {
-      "runtime": "@vercel/node@4.0.0",
-      "includeFiles": "views/**"
-    },
-    "api/index.js:public": {
-      "runtime": "@vercel/node@4.0.0",
+      "runtime": "vercel-node@4.0.0",
       "includeFiles": "public/**"
     }
   },
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/api/index.js"
+      "src": "/^(.*)$",
+      "dest": "api/index.js"
     }
   ]
 }
