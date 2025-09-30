@@ -22,6 +22,8 @@ async function main() {
 }
 
 
+
+
 app.get('/', (req, res) => {
   res.render('index.ejs');
 });
@@ -78,3 +80,5 @@ app.get('/graph4', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
+
+module.exports = app;
