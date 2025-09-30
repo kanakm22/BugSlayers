@@ -1,18 +1,16 @@
 
-
-
 {
   "version": 2,
   "functions": {
-    "index.js": {
+    "api/index.js": {
       "runtime": "nodejs20.x",
-      "includeFiles": ["views/**"]
+      "includeFiles": "views/**"
     }
   },
-  "rewrites": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/index.js"
+      "src": "/(.*)",
+      "dest": "/api/index.js"
     }
   ]
 }
