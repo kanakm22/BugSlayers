@@ -67,6 +67,10 @@ app.get('/graph3', (req, res) => {
   res.render('graph3.ejs');
 });
 
+app.get('/graph4', (req, res) => {
+  res.render('graph4.ejs');
+});
+
 
 
 

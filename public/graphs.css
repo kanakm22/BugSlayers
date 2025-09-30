@@ -120,5 +120,16 @@ html {
     font-size: 3em;
 }
 
+.graph{
+    width: 45%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.img-container{
+    display:flex;
+    justify-content: space-around;
+}
+
 
 
