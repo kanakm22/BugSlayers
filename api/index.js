@@ -60,4 +60,9 @@ app.get("/graph4", (req, res) => {
 });
 
 // ❌ No app.listen() for Vercel
+
+module.exports = (req, res) => {
+  res.status(200).send("Hello from your Vercel Serverless Function!");
+};
+
 module.exports = app;
