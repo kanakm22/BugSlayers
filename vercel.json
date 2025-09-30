@@ -3,10 +3,10 @@
   "functions": {
     "api/index.js": {
       "runtime": "nodejs18.x",
-      "includeFiles": [
-        "views/**",
-        "public/**"
-      ]
+      "includeFiles": "views/**"
+    },
+    "api/index.js:public": {
+      "includeFiles": "public/**"
     }
   },
   "routes": [
