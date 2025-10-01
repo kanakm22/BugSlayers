@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+// const port = 3000;
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static("../public"));
 
 // EJS setup
 app.set("view engine", "ejs");
@@ -60,6 +61,10 @@ app.get("/graph4", (req, res) => {
 });
 
 // ❌ No app.listen() for Vercel
+
+// app.listen(port, () => {
+//   console.log(`Server is running at http://localhost:${port}`);
+// });
 
 module.exports = (req, res) => {
   res.status(200).send("Hello from your Vercel Serverless Function!");
