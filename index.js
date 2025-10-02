@@ -5,11 +5,11 @@ const path = require("path");
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("../public"));
+app.use(express.static("/public"));
 
 // EJS setup
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "../views"));
+app.set("views", path.join(__dirname, "/views"));
 
 // Routes
 app.get("/", (req, res) => {
