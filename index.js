@@ -6,17 +6,29 @@ const bcrypt = require('bcrypt');
 const path = require("path");
 const bodyParser = require('body-parser');
 const User = require('./User');
+const multer = require("multer");
 
 const PORT = process.env.PORT || 3000;
+const storage = multer.diskStorage({
+  destination: function(req, file, cb){
+    return cb(null,"uploads");
+  },
+  filename: function (req,file,cb){
+    return cb(null,`${Date.now()}-${file.originalname}`)
+  },
+})
+
+const upload = multer({storage});
 
 
 
-
+// const upload =multer({dest:"uploads/"}) //uploads is folder name 
 
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.json());
 
 
 
@@ -90,6 +102,21 @@ app.post("/login", async (req, res) => {
         res.status(500).send("An error occurred. Please try again later.");
     }
 });
+
+app.get("/upload",(req,res)=>{
+  res.render("upload.ejs");
+})
+
+app.post("/upload",upload.single("file"),(req,res)=>{
+  if (!req.file) {
+    return res.status(400).send('No file uploaded.');
+  }
+  
+  console.log(req.body);
+  console.log(req.file);
+
+  return res.redirect("/");
+})
 
 
 
