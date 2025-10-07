@@ -1,10 +1,14 @@
 {
   "dependencies": {
     "20": "^1.0.0",
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "mongoose": "^8.18.1",
+    "mongoose": "^8.19.1",
     "nodemon": "^3.1.10",
-    "serverless-http": "^4.0.0"
+    "serverless-http": "^4.0.0",
+    "vercel": "^41.0.2"
   }
 }
